@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字卡片生成器</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部导航栏 -->
+        <nav class="top-nav">
+            <div class="background-settings">
+                <div class="setting-group">
+                    <label>背景颜色：</label>
+                    <input type="color" id="bgColor" value="#ffffff">
+                </div>
+                <div class="setting-group">
+                    <label>上传背景图：</label>
+                    <div class="file-input-wrapper">
+                        <input type="file" id="bgImage" accept="image/*">
+                        <button id="removeBgImage" class="remove-btn" style="display: none;">×</button>
+                    </div>
+                </div>
+                <div class="setting-group">
+                    <label>背景透明度：</label>
+                    <input type="range" id="bgOpacity" min="0" max="100" value="100">
+                </div>
+                <div class="setting-group">
+                    <label>字体大小：</label>
+                    <input type="number" id="fontSize" value="16" min="12" max="72">
+                </div>
+                <div class="setting-group">
+                    <label>文字颜色：</label>
+                    <input type="color" id="textColor" value="#000000">
+                </div>
+                <div class="setting-group">
+                    <label>水印文本：</label>
+                    <input type="text" id="watermarkText" placeholder="输入水印文字">
+                </div>
+                <div class="setting-group">
+                    <label>水印透明度：</label>
+                    <input type="range" id="watermarkOpacity" min="0" max="100" value="10">
+                </div>
+                <div class="setting-group">
+                    <label>字间距：</label>
+                    <input type="range" id="letterSpacing" min="0" max="20" value="0">
+                    <span id="letterSpacingValue">0px</span>
+                </div>
+                <div class="setting-group">
+                    <label>行间距：</label>
+                    <input type="range" id="lineHeight" min="100" max="300" value="150">
+                    <span id="lineHeightValue">150%</span>
+                </div>
+                <div class="setting-group">
+                    <label>文字模板：</label>
+                    <select id="textTemplate">
+                        <option value="">选择模板...</option>
+                        <option value="natural">清新自然风</option>
+                        <option value="luxury">轻奢优雅风</option>
+                        <option value="business">简约商务风</option>
+                        <option value="youth">活力青春风</option>
+                        <option value="retro">复古文艺风</option>
+                        <option value="pink">粉色底模板</option>
+                        <option value="red">红色底模板</option>
+                        <option value="black">黑色底模板</option>
+                    </select>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 中间编辑区域 -->
+        <main class="editor-area">
+            <div class="cards-wrapper">
+                <div class="card-container">
+                    <div class="text-card" contenteditable="true">
+                        点击输入文字...
+                    </div>
+                    <div class="watermark"></div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 底部操作栏 -->
+        <footer class="bottom-bar">
+            <button id="addCard">新增卡片</button>
+            <button id="deleteCard" class="delete-btn">删除卡片</button>
+            <button id="downloadCard">下载卡片</button>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
