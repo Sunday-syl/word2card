@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-height: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* 顶部导航栏样式 */
+.top-nav {
+    padding: 0.5rem;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+}
+
+.background-settings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.setting-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* 中间编辑区域样式 */
+.editor-area {
+    flex: 1;
+    padding: 1rem;
+    background-color: #eee;
+    overflow-y: auto;
+}
+
+.cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-start;
+}
+
+.card-container {
+    width: 250px;
+    aspect-ratio: 3/4;
+    position: relative;
+}
+
+.text-card {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+    outline: none;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+}
+
+/* 底部操作栏样式 */
+.bottom-bar {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* 添加水印样式 */
+.watermark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 20px;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.watermark-pattern {
+    padding: 5px;
+    transform: rotate(-30deg);
+    color: #000;
+    white-space: nowrap;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 添加卡片选中态样式 */
+.card-container.selected {
+    outline: 2px solid #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+/* 添加多选态样式 */
+.card-container.multi-selected {
+    outline: 2px dashed #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+/* 添加删除按钮样式 */
+.remove-btn {
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 50%;
+    background-color: #dc3545;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.remove-btn:hover {
+    background-color: #c82333;
+}
+
+/* 文件输入包装器 */
+.file-input-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* 添加背景遮罩层样式 */
+.bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* 修改文字卡片样式，确保文字在遮罩层上方 */
+.text-card {
+    position: relative;
+    background-color: transparent;
+    z-index: 1;
+}
+
+/* 删除按钮样式 */
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+} 
